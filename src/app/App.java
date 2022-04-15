@@ -25,7 +25,7 @@ public class App {
     }
 
     // Инициализация переменных.
-    // Имитация ввода данных пользователем.
+    // ввод данных пользователем.
     private static void initVars() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Имя продавца: ");
