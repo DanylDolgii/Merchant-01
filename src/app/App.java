@@ -2,6 +2,8 @@ package app;
 
 import java.util.Scanner;
 
+// Класс-входная точка в приложение.
+// App launcher.
 public class App {
 
     static String merchantName;
@@ -16,11 +18,14 @@ public class App {
     static String infoMerchant;
     static String infoProduct;
 
+    // Делаем метод main() наименее загруженным логикой
     public static void main(String[] args) {
         initVars();
         showData(processData());
     }
 
+    // Инициализация переменных.
+    // Имитация ввода данных пользователем.
     private static void initVars() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Имя продавца: ");
@@ -37,6 +42,11 @@ public class App {
         price = scanner.nextDouble();
     }
 
+    // Передача данных на обработку.
+    // Вызовы методов через экземпляры классов
+    // для получения результатов расчетов.
+    // Здесь же получение расчета и округления бонуса.
+    // Получение шаблона для вывода.
     private static String processData() {
         merchantA = new MerchantA(merchantName, phone, email);
         infoMerchant = merchantA.infoMerchant();
@@ -47,6 +57,7 @@ public class App {
         return infoMerchant + infoProduct + "\nБонус (грн.): " + roundBonus;
     }
 
+    // Вывод данных
     private static void showData(String output) {
         System.out.println(output);
     }
